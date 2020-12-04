@@ -1,0 +1,385 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;1,700&display=swap');
+body {
+  font-family: 'Space Mono', monospace;
+  background-color: #17141d;
+  color: white;
+  padding: 0;
+  margin: 0;
+
+}
+#grilla {
+  display: grid;
+  grid-template-areas:
+  "header header header"
+  "main main main"
+  "main main main"
+  "footer footer footer";
+  grid-template-rows: 125px 200px 200px 10%;
+  grid-template-columns: auto auto 35%;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+
+.principalHeader {
+  grid-area: header;
+  display: flex;
+  flex-direction: row;
+
+}
+main {
+  grid-area: main;
+}
+aside {
+  grid-area: aside;
+}
+footer{
+  grid-area: footer;
+}
+ul ul li {
+  display: block;
+  text-align: center;
+}
+ul li:hover ul {
+  display: block;
+  position: absolute;
+}
+ul ul li a:hover {
+  color: white;
+  text-shadow: deeppink 5px;
+}
+ul li a:hover {
+  color: white;
+}
+iframe {
+  margin: 20px;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+}
+
+ul li {
+  display: inline-block;
+  align-items: space-evenly;
+  width: 122px;
+}
+
+/*NEWS! */
+.myCardList {
+  display: flex;
+
+}
+.myCard {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  height: 350px;
+  width: 400px;
+  min-width: 250px;
+  padding: 1.5rem;
+
+  border-radius: 16px;
+  background-color: #17141d;
+  box-shadow: -1rem 0 3rem #000;
+  transition: 0.4s;
+}
+.myCard:hover {
+  transform: translateY(-3rem);
+}
+.myCard:hover~.myCard {
+  transform: translateX(130px);
+}
+.myCard:not(:first-child) {
+  margin-left: -130px;}
+.myCard img {
+  display: block;
+  width: 100%;
+  height: 230px;
+  object-fit: contain;
+  justify-content: center;
+
+}
+.myCardHeader h2 {
+  font-size: 18px;
+}
+.myCardHeader h2:hover {
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  text-shadow: none;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+}
+.myCardHeader a:hover {
+  text-decoration: none;
+}
+
+
+.linkmyCard {
+  text-decoration: none;
+}
+.tituloNews {
+  margin-bottom: 6rem;
+}
+@media screen and (max-width: 800px) {
+  main {
+    width: 100%;
+    height: auto;
+
+  }
+  .navbar navbar-expand-sm navbar-dark bg-dark  {
+    width: 100%;
+    height: auto;
+
+  }
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+}
+
+.navbar navbar-expand-sm navbar-dark bg-dark {
+  width: 100%;
+}
+
+/* SECCION DE RANKING */
+
+.artistRanking {
+  display: flex;
+  flex-direction: row;
+}
+.cardRanking {
+  position: relative;
+  width: 600px;
+  height: 350px;
+  margin: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 20px;
+  background: linear-gradient(185deg, #d41e31, #491f8f);
+}
+.cardRanking img {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 400px;
+  transition: 0.5s
+}
+
+.cardRanking:hover img {
+  left: 80%;
+  height: 500px;
+}
+
+.cardRanking .content {
+  position: relative;
+  width: 50%;
+  left: 20%;
+  padding: 20px 20px 20px 40px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+
+}
+.cardRanking:hover .content {
+  opacity: 1;
+  visibility: visible;
+  left: 0%;
+}
+
+.cardRanking .content h2 {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.5em;
+  line-height: 1em;
+}
+.cardRanking .content p {
+  color: #fff;
+  font-size: 12px;
+}
+
+.cardRanking .content a {
+  position: relative;
+  display: inline-block;
+  color: #111;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: #fff;
+  margin-top: 10px;
+  text-decoration: none;
+}
+@media (max-width: 991px) {
+
+  .cardRanking {
+    position: relative;
+    width: auto;
+    max-width: 600px;
+    align-items: flex-start;
+  }
+  .cardRanking:hover {
+    height: 600px;
+  }
+  .cardRanking:hover img{
+    left: 50%;
+    height: 350px;
+  }
+  .cardRanking .content {
+    width: 100%;
+    left: 0;
+    padding: 40px;
+  }
+}
+
+@media (max-width: 420px) {
+  .artistRanking {
+    flex-direction: column;
+  }
+  .cardRanking .content {
+    padding: 30px;
+  }
+  .cardRanking:hover img {
+    height: 300px
+  }
+
+}
+.rankTitle {
+  background: linear-gradient(185deg, #d41e31, #491f8f);
+  text-shadow: none;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+}
+.nav-link
+  .nav-item {
+    background: linear-gradient(185deg, #d41e31, #491f8f);
+    text-shadow: none;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+  }
+
+h1 {
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  text-shadow: none;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bolder;
+}
+
+nav {
+  width: 100%;
+}
+
+#collapsibleNavbar ul li a:hover{
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  text-shadow: none;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sectionJoin {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.containerJoin {
+  position: relative;
+  width: 800px;
+  height: 500px;
+  background: #fff;
+  box-shadow: 0 15px 50px rgba(0,0,0,0.1)
+}
+.userJoin {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.imgBxJ {
+  position: relative;
+  width: 50%;
+  background: #ff0;
+  transition: 1s;
+}
+.imgBxJ img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.formBx {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  transition: 1s;
+}
+.formBx form h2{
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 10px;
+  color: #555;
+}
+.formBx form input {
+  position: relative;
+  width: 100%;
+  padding: 10px;
+  background: #f5f5f5;
+  color: #333;
+  border: none;
+  outline: none;
+  margin: 8px 0;
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-weight: 200;
+}
+.formBx form input[type="submit"] {
+  max-width: 100px;
+  background: #677eff;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: 1s;
+}
+.signup {
+  position: relative;
+  margin-top: 20px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #555;
+  text-transform: uppercase;;
+  font-weight: 300;
+}
+.signup a {
+  font-weight: 600;
+  text-decoration: none;;
+  color: #677eff;
+}
